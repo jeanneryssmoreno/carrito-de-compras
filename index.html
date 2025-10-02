@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tokai sushi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <img src="src/tokai-sushi.jpg" class="logo" alt="Tokai Sushi Logo">
+    
+    <div id="cart">
+        <span class="cart-icon" onclick="toggleCartDropdown()">🛒</span>
+        <span class="cart-count">0</span>
+        <div class="cart-dropdown" style="display: none;">
+            <table id="lista-carrito">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los productos del carrito dinámicamente -->
+                </tbody>
+            </table>
+<a href="#" id="vaciar-carrito" class="vaciar-carrito"> Vaciar carrito</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleCartDropdown() {
+        const cartDropdown = document.querySelector('.cart-dropdown');
+        cartDropdown.style.display = cartDropdown.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+  </header>
+  <main>
+    <section id="products"   class="products" >
+      <div class="card" id="1">
+        <img src="src/tiger_roll.webp" alt="Sushi Roll">
+        <h2>tiger_roll</h2>
+        <p>Delicioso rollo de salmón y aguacate.</p>
+        <span class="price">$8.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="2">
+        <img src="src/tempura.jpeg" alt="Nigiri">
+        <h2>tempura</h2>
+        <p>Arroz con lámina de salmón fresco.</p>
+        <span class="price">$6.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="3">
+        <img src="src/tempura-dinamita.jpeg" alt="Sashimi">
+        <h2>tempura Dinamita</h2>
+        <p>Finas láminas de pescado fresco.</p>
+        <span class="price">$13.34</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="4">
+        <img src='src/sushi-salmon-caviar.webp' alt="Sashimi">
+        <h2>Sashimi</h2>
+        <p>Finas láminas de pescado fresco.</p>
+        <span class="price">$11.50</span>
+        <button class="agg-carrito" >Añadir al carrito</button>
+      </div>
+      <div class="card" id="5">
+        <img src="src/salmoyolivada.webp" alt="Sashimi">
+        <h2>Sushi salmon y olivada</h2>
+        <p>Finas láminas de pescado fresco.</p>
+        <span class="price">$10.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="6">
+        <img src="src/maki.jpg" alt="Sashimi">
+        <h2>Maki</h2>
+        <p>Finas láminas de pescado fresco.</p>
+        <span class="price">$11.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="7">
+        <img src="src/ComboTempura3.webp" alt="Sashimi">
+        <h2>Tempura clasico</h2>
+        <p>Finas láminas de pescado fresco.</p>
+        <span class="price">$12.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+      <div class="card" id="8">
+        <img src="src/bolwSushivariado.webp" alt="Sashimi">
+        <h2>Bolw variado</h2>
+        <p>Bolw variado con pescado frescon entre tempura y crudos</p>
+        <span class="price">$25.00</span>
+        <button class="agg-carrito">Añadir al carrito</button>
+      </div>
+    
+    </section>
+
+    <section class="adicionales">
+      <h2>Adicionales</h2>
+      <div class="adicionales-list">
+        <div class="card">
+          <img src="src/wasabi.jpeg" alt="Wasabi">
+          <h3>Wasabi Extra</h3>
+          <p>Picante tradicional japonés.</p>
+          <span class="price">$1.00</span>
+          <button class="agg-carrito" >Añadir al carrito</button>
+        </div>
+        <div class="card">
+          <img src="src/jenjibre.jpeg" alt="Jengibre">
+          <h3>Jengibre</h3>
+          <p>Finas láminas de jengibre encurtido.</p>
+          <span class="price">$1.00</span>
+          <button class="agg-carrito">Añadir al carrito</button>
+        </div>
+        <div class="card">
+          <img src="src/soya.jpeg" alt="Jengibre">
+          <h3>Jengibre</h3>
+          <p>Finas láminas de jengibre encurtido.</p>
+          <span class="price">$1.00</span>
+          <button class="agg-carrito">Añadir al carrito</button>
+        </div>
+        
+  </main>
+  <script src="carrito-compras.js"></script>
+</body>
+</html>
