@@ -66,6 +66,7 @@ main {
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 2px solid #d32f2f;
+  
 }
 
 .card h2 {
@@ -120,5 +121,6 @@ button:hover {
     max-height: 120px;
     width: auto;
     object-fit: contain;
+    border-radius: 50%;
 }
 
