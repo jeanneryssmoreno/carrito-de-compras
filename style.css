@@ -1,3 +1,79 @@
+/* Carrito de compras mejorado */
+.cart-dropdown {
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  background: #fff;
+  border: 1px solid #d32f2f;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(211,47,47,0.10);
+  padding: 1.5rem;
+  min-width: 350px;
+  z-index: 100;
+  display: none;
+  color: #111;
+}
+
+.cart-dropdown.active {
+  display: block;
+}
+
+#lista-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+#lista-carrito th, #lista-carrito td {
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+#lista-carrito th {
+  background: #d32f2f;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#lista-carrito img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #d32f2f;
+}
+
+.vaciar-carrito {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.vaciar-carrito:hover {
+  background: #b71c1c;
+}
+
+.borrar-curso {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+.borrar-curso:hover {
+  background: #d32f2f;
+  color: #fff;
+}
 body {
   background: #fff;
   color: #111;
@@ -66,6 +142,7 @@ main {
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 2px solid #d32f2f;
+  
 }
 
 .card h2 {
@@ -120,5 +197,6 @@ button:hover {
     max-height: 120px;
     width: auto;
     object-fit: contain;
+    border-radius: 50%;
 }
 
