@@ -41,6 +41,12 @@ const leerDatosSuchi = (sushi) => {
     id: sushi.getAttribute("id"),
     cantidad: 1,
   };
+
+  //revisa si un elemento ya existe en el carrito
+
+     const siExistev = articulosCarrito.some(sushi => sushi.id === infoSushi.id)
+
+
   // agregar elementos al arreglo de carrito
   articulosCarrito = [...articulosCarrito, infoSushi];
   console.log(articulosCarrito);
@@ -73,15 +79,9 @@ const muestraCarrito = () => {
            <td> 
             <img src='${imagen}' width = '100'>
            </td>
-           <td>
-           ${titulo}
-           </td>
-            <td>
-           ${precio}
-           </td>
-            <td>
-           ${cantidad}
-           </td>
+           <td>${titulo} </td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
             <td>
            <a href= "#" class = 'borrar-curso' id="${id}">X</a>
            </td>
