@@ -28,7 +28,7 @@ const manejarAdicional = (e) => {
     leerDatosAdicional(adicionalSeleccionado);
   }
 };
-
+// 1. capturar el evento del click
 // leer el contenido al cual le hicimos
 //  click y extraer la informacion del sushi
 
@@ -45,7 +45,7 @@ const leerDatosSuchi = (sushi) => {
   //revisa si un elemento ya existe en el carrito
 
      const siExistev = articulosCarrito.some(sushi => sushi.id === infoSushi.id)
-
+console.log(siExistev)
 
   // agregar elementos al arreglo de carrito
   articulosCarrito = [...articulosCarrito, infoSushi];
