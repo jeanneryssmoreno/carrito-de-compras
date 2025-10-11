@@ -11,6 +11,8 @@ const cargarEventListener = () => {
   //cuando agg un sushi al carrito
   listasushi.addEventListener("click", agregarsushi);
   agregarAdicionales.addEventListener("click", manejarAdicional);
+  //eliminar comida de carrito
+  carrito.addEventListener('click', eliminarSushi )
 };
 
 const agregarsushi = (e) => {
@@ -28,6 +30,28 @@ const manejarAdicional = (e) => {
     leerDatosAdicional(adicionalSeleccionado);
   }
 };
+
+//eliminar productos del carrito
+
+const eliminarSushi = (e) => {
+
+
+if(e.target.classList.contains('borrar-sushi')){
+
+  const sushiId = e.target.getAttribute('id')
+  //eliminar los articulos por el data id
+  
+  articulosCarrito = articulosCarrito.filter(sushi => sushi.id !== sushiId)
+  console.log(articulosCarrito)
+
+}
+muestraCarrito()//iterar y mostrar
+}
+
+
+
+
+
 // 1. capturar el evento del click
 // leer el contenido al cual le hicimos
 //  click y extraer la informacion del sushi
@@ -44,13 +68,26 @@ const leerDatosSuchi = (sushi) => {
 
   //revisa si un elemento ya existe en el carrito
 
-     const siExistev = articulosCarrito.some(sushi => sushi.id === infoSushi.id)
-console.log(siExistev)
+  const siExiste = articulosCarrito.some((sushi) => sushi.id === infoSushi.id);
 
   // agregar elementos al arreglo de carrito
-  articulosCarrito = [...articulosCarrito, infoSushi];
-  console.log(articulosCarrito);
-  muestraCarrito();
+
+  if (siExiste) {
+    //actualiza la cantidad
+    const sushiCantidad = articulosCarrito.map((sushi) => {
+      if (sushi.id === infoSushi.id) {
+        return {...sushi, cantidad: sushi.cantidad + 1,}
+      } else {
+        return sushi;
+      }
+    });
+    articulosCarrito = [...sushiCantidad];
+  } else {
+    articulosCarrito = [...articulosCarrito, infoSushi];
+   
+  }
+ muestraCarrito();
+
 };
 
 // const leerDatosAdicional = (adicional) => {
@@ -72,7 +109,7 @@ const muestraCarrito = () => {
   //recorre el carrito y genera el html
 
   articulosCarrito.forEach((sushi) => {
-    const {imagen, titulo,precio,cantidad,id} = sushi;
+    const { imagen, titulo, precio, cantidad, id } = sushi;
     const row = document.createElement("tr");
     row.innerHTML = `
 
@@ -83,7 +120,7 @@ const muestraCarrito = () => {
             <td>${precio}</td>
             <td>${cantidad}</td>
             <td>
-           <a href= "#" class = 'borrar-curso' id="${id}">X</a>
+           <a href= "#" class='borrar-sushi' id="${id}">X</a>
            </td>
            
       
